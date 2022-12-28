@@ -22,7 +22,11 @@ const ExpenseForm = ({ onSaveExpenseData, onCancel }) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    if (enteredTitle && enteredAmount && enteredDate !== "") {
+    if (
+      enteredTitle.trim().length &&
+      enteredAmount.trim().length &&
+      enteredDate.trim().length !== 0
+    ) {
       const expenseData = {
         title: enteredTitle,
         amount: enteredAmount,
